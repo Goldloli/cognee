@@ -40,7 +40,7 @@ jobs:
           # Pinned: this workflow analyses dev merges, so every job must run
           # dev's tools/, not the default branch's. Without a ref a scheduled
           # run checks out main (RES-41).
-          ref: dev
+          ref: tmp/rerun-docs-6539-6540
           fetch-depth: 0
 
       - name: Fetch latest dev branch
@@ -95,7 +95,7 @@ jobs:
       - name: Check out core repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
-          ref: dev
+          ref: tmp/rerun-docs-6539-6540
           fetch-depth: 0
 
       - name: Set up Python
@@ -527,7 +527,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
         with:
-          ref: dev
+          ref: tmp/rerun-docs-6539-6540
 
       - name: Send failure email
         env:
